@@ -7,20 +7,19 @@ const PORT = 3000;
 app.use(cors());
 app.use(json());
 
-
 const data_users = {
-    usuario: "Lucas",
-    contato: "lucas@email.com",
-}
+  usuario: "Lucas",
+  contato: "lucas@email.com",
+};
 
 app.get("/", (req, res) => {
   res.json({ message: "server funcionando" });
 });
 
 app.get("/usuarios", (req, res) => {
-  res.json({ message:data_users });
+  res.json({ message: data_users });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server rodando em: ${PORT}`);
 });
